@@ -1,13 +1,13 @@
-import { type ComponentStructure } from "./types";
+import { type ComponentStructure } from "./ComponentStructure";
 
 class Component implements ComponentStructure {
   element: Element;
-  private readonly parentElement: Element;
+  readonly parentElement: Element;
 
   constructor(parentElement: Element, tagName: string, className: string) {
     this.element = document.createElement(tagName);
     this.element.className = className;
-    parentElement.appendChild(this.element);
+    this.parentElement = parentElement;
   }
 
   render() {
