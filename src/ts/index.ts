@@ -1,6 +1,3 @@
-import CardComponent from "./components/CardComponent/CardComponent";
-import Component from "./components/Component/Component";
-
 import HeaderComponent from "./components/HeaderComponent/HeaderComponent";
 import ListSectionComponent from "./components/ListSectionComponent/ListSectionComponent";
 import MainComponent from "./components/MainComponent/MainComponent";
@@ -20,14 +17,18 @@ const seriesList = new ListSectionComponent(
   "list"
 );
 
+const seriesListWatched = new ListSectionComponent(
+  mainContainer.element,
+  "section",
+  "list"
+);
+
 const ulCardContainer = document.createElement("ul");
-const cardSerie = new CardComponent(ulCardContainer, "li", "series");
 
 container.render();
 mainContainer.render();
 seriesList.render();
-cardSerie.render();
-
+seriesListWatched.render();
 const sectionElement = document.querySelector(".list")!;
 
 sectionElement?.appendChild(ulCardContainer);
