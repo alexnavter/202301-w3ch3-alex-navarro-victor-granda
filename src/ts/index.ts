@@ -11,16 +11,11 @@ const mainContainer = new MainComponent(
   "main-content"
 );
 
-const seriesList = new ListSectionComponent(
-  mainContainer.element,
-  "section",
-  "list"
-);
+const seriesList = new ListSectionComponent(mainContainer.element, "section");
 
 const seriesListWatched = new ListSectionComponent(
   mainContainer.element,
-  "section",
-  "list"
+  "section"
 );
 
 const ulCardContainer = document.createElement("ul");

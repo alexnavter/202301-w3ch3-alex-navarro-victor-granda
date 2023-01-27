@@ -1,18 +1,18 @@
 import { type ComponentStructure } from "./ComponentStructure";
 
-class Component implements ComponentStructure {
+export class Component implements ComponentStructure {
   element: Element;
-  parentElement: Element;
+  private readonly parentElement: Element;
 
   constructor(parentElement: Element, tagName: string, className: string) {
     this.element = document.createElement(tagName);
-    this.element.className = className;
     this.parentElement = parentElement;
+    if (className !== undefined) {
+      this.element.className = className;
+    }
   }
 
   render() {
     this.parentElement.appendChild(this.element);
   }
 }
-
-export default Component;
